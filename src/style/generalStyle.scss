@@ -4,7 +4,11 @@
     box-sizing: border-box;
 }
 
+$primary-color: #E50815;
+$bg-color-first: #222;
+$bg-color-second: #111;
+
 body{
-    background-color: #333;
+    background-color: $bg-color-first;
     font-family: sans-serif;
 }
