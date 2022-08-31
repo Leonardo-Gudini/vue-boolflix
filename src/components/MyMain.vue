@@ -4,7 +4,7 @@
         <li v-for="(film, index) in filmSeriesFound" :key="index">
             <div>{{film.title}}</div>
             <div>{{film.original_title}}</div>
-            <div>{{film.original_language}}</div>
+            <country-flag :country='film.original_language' size='medium'/>
             <div>{{film.vote_average}}</div>
         </li>
     </ul>
@@ -12,12 +12,17 @@
 </template>
 
 <script>
+import CountryFlag from 'vue-country-flag'
 
 export default {
     name: "MyMain",
     props:{
         filmSeriesFound: Array,
     },
+    components:{
+        CountryFlag
+    }
+
 }
 </script>
 
