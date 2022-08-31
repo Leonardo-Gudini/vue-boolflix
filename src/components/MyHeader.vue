@@ -3,17 +3,20 @@
     <div class="logo">Boolflix</div>
     
     <div class="search">
-        <form action="get">
-            <input type="search" name="" id="search">
-            <button type="submit">Cerca</button>
-        </form>
+            <input placeholder="Inserisci un Film o serie TV" type="text" name="" id="search" v-model="filmSeriesSearched" >
+            <button class="search" @click="$emit('search', filmSeriesSearched)">Cerca</button>
     </div>
   </header>
 </template>
 
 <script>
 export default {
-    name: "MyHeader"
+    name: "MyHeader",
+    data() {
+        return{
+            filmSeriesSearched: ""
+        }
+    }
 }
 </script>
 
@@ -35,7 +38,7 @@ export default {
         }
         #search{
             height: 50px;
-            width: 200px;
+            width: 260px;
             background-color: $bg-color-first;
             border: none;
             border-radius: 10px;
