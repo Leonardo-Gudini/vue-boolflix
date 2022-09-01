@@ -24,11 +24,6 @@ export default {
   },
   methods: {
     searchFilmSeries(searchText){
-      // axios.get("https://api.themoviedb.org/3/search/movie?api_key=62496f666966773e2ed0aa3c4d10d49c&query=" + searchText + "&language=it-IT")
-      //   .then( res => {
-      //       this.filmSeriesFound = res.data.results;
-      //       console.log(this.filmSeriesFound)
-      //   })
       axios.all([
         axios.get("https://api.themoviedb.org/3/search/movie?api_key=62496f666966773e2ed0aa3c4d10d49c&query=" + searchText + "&language=it-IT"),
         axios.get("https://api.themoviedb.org/3/search/tv?api_key=62496f666966773e2ed0aa3c4d10d49c&query=" + searchText + "&language=it-IT")
