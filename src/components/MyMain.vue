@@ -1,13 +1,32 @@
 <template>
 <main>
-    <ul>
-        <li v-for="(film, index) in filmSeriesFound" :key="index">
-            <div>{{film.title}}</div>
-            <div>{{film.original_title}}</div>
-            <country-flag :country='film.original_language' size='medium'/>
-            <div>{{film.vote_average}}</div>
-        </li>
-    </ul>
+    <div>
+        <h2>Film</h2>
+        <ul>
+            
+            <li v-for="(film, index) in filmSeriesFound" :key="index">
+                <img :src="'https://image.tmdb.org/t/p/w342/' + film.poster_path" alt="cover"/>
+                <div><span>Titolo: </span>{{film.title}}</div>
+                <div><span>Titolo originale: </span>{{film.original_title}}</div>
+                <country-flag :country='film.original_language' size='medium'/>
+                <div><span>Voto: </span>{{film.vote_average}}</div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div>
+        <h2>Serie TV</h2>
+        <ul>
+            <li v-for="(tvSeries, index) in tvSeriesFound" :key="index">
+                <img :src="'https://image.tmdb.org/t/p/w342/' + tvSeries.poster_path" alt="cover"/>
+                <div><span>Titolo: </span>{{tvSeries.name}}</div>
+                <div><span>Titolo originale: </span>{{tvSeries.original_name}}</div>
+                <country-flag :country='tvSeries.original_language' size='medium'/>
+                <div><span>Voto: </span>{{tvSeries.vote_average}}</div>
+            </li>
+        </ul>
+    </div>
 </main>
 </template>
 
@@ -18,6 +37,7 @@ export default {
     name: "MyMain",
     props:{
         filmSeriesFound: Array,
+        tvSeriesFound: Array,
     },
     components:{
         CountryFlag

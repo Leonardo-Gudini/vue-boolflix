@@ -3,7 +3,7 @@
     <div class="logo">Boolflix</div>
     
     <div class="search">
-            <input placeholder="Inserisci un Film o serie TV" type="text" name="" id="search" v-model="filmSeriesSearched" >
+            <input placeholder="Inserisci un Film o serie TV" type="text" name="" id="search" v-model="filmSeriesSearched">
             <button class="search" @click="$emit('search', filmSeriesSearched)">Cerca</button>
     </div>
   </header>
